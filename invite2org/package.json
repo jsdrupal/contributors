@@ -5,7 +5,7 @@
   "description": "Invite a user to an org",
   "main": "lib/main.js",
   "scripts": {
-    "run": "npx ts-node src/main.ts",
+    "action": "npx ts-node src/main.ts",
     "build": "tsc",
     "test": "jest"
   },

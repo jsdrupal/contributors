@@ -8,4 +8,4 @@ COPY package.json /package.json
 RUN yarn install
 COPY . /
 
-ENTRYPOINT ["npm", "run"]
+ENTRYPOINT ["npm", "run", "action"]
