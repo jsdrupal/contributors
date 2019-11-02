@@ -3,10 +3,10 @@ import * as github from '@actions/github';
 
 async function run() {
   try {
-    const token = core.getInput('token');
-    const repository = core.getInput('repository');
-    const username = core.getInput('username');
-    const team_slug = core.getInput('team_slug');
+    const token = process.env.GITHUB_TOKEN || '';
+    const repository = process.env.GITHUB_REPOSITORY || '';
+    const username = process.env.GITHUB_ACTOR || '';
+    const team_slug = process.env.TEAM_SLUG || '';
 
     const octokit = new github.GitHub(token);
     const user = await octokit.users.getByUsername({
