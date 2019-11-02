@@ -1,0 +1,16 @@
+name: 'invite2org'
+description: 'Invite person to team and org'
+author: 'jsdrupal'
+inputs:
+  token:
+    description: 'The github token'
+  repository:
+    description: 'The repository like foo/bar'
+  username:
+    description: 'User who should be invited'
+  team_slug:
+    default: ''
+    description: 'The team the user should be invited to, optional'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'

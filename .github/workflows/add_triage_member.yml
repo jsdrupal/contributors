@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Adds user as contribtor
-      run: |
-        echo $GITHUB_REPOSITORY
-        echo $GITHUB_ACTOR
+    - uses: ./invite2org
+      name: Adds user as contribtor
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ GITHUB_REPOSITORY }}
+        username: ${{ GITHUB_ACTOR }}
+        team_slug: 'issue-triage'
+
+
