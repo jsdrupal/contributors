@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: ./invite2org
+     - uses: actions/checkout@v1
+     - uses: ./invite2org
       name: Adds user as contribtor
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
