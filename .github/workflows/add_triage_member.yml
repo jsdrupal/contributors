@@ -14,10 +14,10 @@ jobs:
        name: Checkout codee
      - uses: ./invite2org
        name: Adds user as contribtor
-       with:
-         token: ${{ secrets.GITHUB_TOKEN }}
-         repository: ${{ env.GITHUB_REPOSITORY }}
-         username: ${{ env.GITHUB_ACTOR }}
-         team_slug: 'issue-triage'
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+         GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
+         TEAM_SLUG: 'issue-triage'
 
 
