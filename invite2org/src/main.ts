@@ -15,7 +15,7 @@ async function run() {
       username
     });
 
-    const match = repository.match('/([^/]*)\/([^/]*)/');
+    const match = repository.match(/([^/]*)\/([^/]*)/);
     if (match) {
       const org = match[0];
       console.log({org});
@@ -36,6 +36,10 @@ async function run() {
         team_ids,
       });
       process.exit(0);
+    }
+    else {
+      console.error('Wrong org');
+      process.exit(1);
     }
   } catch (error) {
     console.error(error);
