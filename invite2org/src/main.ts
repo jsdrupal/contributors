@@ -8,14 +8,14 @@ async function run() {
     const username = process.env.GITHUB_ACTOR || '';
     const team_slug = process.env.TEAM_SLUG || '';
 
-    console.log(`Add ${username} to  ${repository} into ${team_slug}`);
+    console.log(`Add ${username} to ${repository} into ${team_slug}`);
 
     const octokit = new github.GitHub(token);
     const user = await octokit.users.getByUsername({
       username
     });
 
-    const match = repository.match('([^/]*)\/([^/]*)');
+    const match = repository.match('/([^/]*)\/([^/]*)/');
     if (match) {
       const org = match[0];
       console.log({org});
