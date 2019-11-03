@@ -1,10 +1,11 @@
-# Container image that runs your code
 FROM node:lts
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+RUN mkdir /app
+WORKDIR /app
 
-WORKDIR  /github/workspace/invite2org
+COPY yarn.lock package.json /app/
 
 RUN yarn install
+COPY . /app/
 
 ENTRYPOINT ["npm", "run", "action"]
