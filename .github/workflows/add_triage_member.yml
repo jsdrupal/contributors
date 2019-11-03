@@ -16,8 +16,8 @@ jobs:
        name: Adds user as contribtor
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
-         GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
+        #  GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+        #  GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
          TEAM_SLUG: 'issue-triage'
 
 
