@@ -17,7 +17,7 @@ async function run() {
 
     const match = repository.match(/([^/]*)\/([^/]*)/);
     if (match) {
-      const org = match[0];
+      const org = match[1];
       console.log({org});
       let team_ids : Array<number> = [];
       if (team_slug) {
